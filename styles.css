@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Chivo Mono', monospace;
+}
+
+h1 {
+    font-size: 50px;
+    z-index: 1;
+    position: absolute;
+    color: #EEEEEE;
+}
+
+h2 {
+    font-size: 45px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* NAVBAR STYLING */
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    background-color: #EEEEEE;
+    border-bottom: 5px solid #E39774;
+}
+
+nav ul {
+    display: flex;
+    justify-content: end;
+    list-style-type: none;
+}
+
+nav ul li {
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #5C9EAD;
+}
+
+nav ul li a:hover {
+    color: #E39774;
+}
+
+/* WELCOME SECTION */
+
+#welcome-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow-wrap: break-word;
+    text-align: center;
+    min-height: 100%;
+    background-color: #FFFFFF;
+}
+
+.box {
+    width: 600px;
+    height: 30%;
+    position: absolute;
+    background-color: #5C9EAD;
+}
+
+.box::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: -1;
+    background-color: #E39774;
+}
+
+/* PROJECT SECTION */
+
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 30px;
+    background-color: #5C9EAD;
+}
+
+#projects h2 {
+    grid-column: 1/-1;
+    color: #FFFFFF;
+}
+
+.project-tile {
+    margin: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.project-tile img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #326273;
+    margin: 10px 0;
+}
+
+.project-tile h3 {
+    display: none;
+}
+
+.project-tile:hover img {
+    filter: brightness(20%);
+}
+
+.project-tile:hover h3 {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #EEEEEE;
+    font-size: 28px;
+}
+
+/* CONTACT */
+
+#contact {
+    padding: 20px;
+}
+
+#contact h2 {
+    color: #326273;
+}
+
+#contact ul {
+    list-style-type: none;
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#contact li {
+    padding: 20px;
+    font-size: 28px;
+}
+
+#contact li:hover a {
+    color: #E39774;
+}
+
+#contact li a {
+    text-decoration: none;
+    color: #5C9EAD;
+}
+
+footer {
+    padding: 20px;
+    background-color: #EEEEEE;
+    border-top: 5px solid #E39774;
+}
+
+/* MEDIA QUERY */
+
+@media only screen and (max-width: 600px) {
+    #welcome-section {
+        background-color: #5C9EAD;
+    }
+
+    .box {
+        display: none;
+    }
+
+    #projects {
+        background-color: #FFFFFF;
+    }
+
+    #projects h2 {
+        color: #326273;
+    }
+
+    .project-tile img {
+        border: 2px solid #EEEEEE;
+    }
+
+    #contact {
+        background-color: #5C9EAD;
+    }
+
+    #contact h2 {
+        color: #FFFFFF;
+    }
+
+    #contact li a {
+        color: #FFFFFF;
+    }
+}
